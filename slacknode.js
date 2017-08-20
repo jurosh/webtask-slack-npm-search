@@ -28,7 +28,7 @@ module.exports = (ctx, cb) => {
       .slice(0, SHOW_COUNT)
       .map(item => {
         const packg = item.package;
-        const description = shortenString(packg.description.toString(), 30);
+        const description = shortenString(packg.description, 30);
         const date = new Date(packg.date).toLocaleDateString();
         const link = packg.links.homepage || packg.links.repository || packg.links.npm;
         const author = packg.publisher.username;
